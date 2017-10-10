@@ -55,6 +55,26 @@ function authHandler(error, authData) {
   }
 }
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA2AplNuJVYIHh3YXfvILIoGRBZGYCW270",
+    authDomain: "fir-testing-4910b.firebaseapp.com",
+    databaseURL: "https://fir-testing-4910b.firebaseio.com",
+    projectId: "fir-testing-4910b",
+    storageBucket: "",
+    messagingSenderId: "615773359241"
+  };
+  firebase.initializeApp(config);
+
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      window.user = user;
+      // Step 1:
+      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
+      //  If there is a user, log out out user details for debugging purposes.
+    });
+
+
 // Log the user in with an email combination
 messagesRef.authWithPassword({
   email    : email,
