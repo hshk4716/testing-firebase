@@ -42,7 +42,7 @@
       firebase.auth().signOut();
     });
 
-    var messagesRef = new Firebase('https://brilliant-fire-3159.firebaseio.com/users');
+    var messagesRef = new Firebase('https://fir-testing-4910b.firebaseio.com/users');
 var userId = 0;
 
 // For user authentication
