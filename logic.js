@@ -42,20 +42,7 @@
       firebase.auth().signOut();
     });
 
-    var messagesRef = new Firebase('https://fir-testing-4910b.firebaseio.com/users');
-var userId = 0;
-
-// For user authentication
-function authHandler(error, authData) {
-  if (error) {
-    console.log('Login Failed!', error);
-  } else {
-    // Set the gravatar
-    document.getElementById('gravatar').src = authData.password.profileImageURL;
-  }
-}
-
-  var config = {
+     var config = {
     apiKey: "AIzaSyA2AplNuJVYIHh3YXfvILIoGRBZGYCW270",
     authDomain: "fir-testing-4910b.firebaseapp.com",
     databaseURL: "https://fir-testing-4910b.firebaseio.com",
@@ -72,6 +59,20 @@ function authHandler(error, authData) {
       //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
       //  If there is a user, log out out user details for debugging purposes.
     });
+
+    var messagesRef = new Firebase('https://fir-testing-4910b.firebaseio.com/users');
+var userId = 0;
+
+// For user authentication
+function authHandler(error, authData) {
+  if (error) {
+    console.log('Login Failed!', error);
+  } else {
+    // Set the gravatar
+    document.getElementById('gravatar').src = authData.password.profileImageURL;
+  }
+}
+
 
 // Log the user in with an email combination
 messagesRef.authWithPassword({
